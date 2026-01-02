@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff4f8;
+  text-align: center;
+}
+
+.hero {
+  padding: 90px 20px;
+  background: linear-gradient(#ffd6e8, #fff);
+}
+
+h1 {
+  font-family: cursive;
+  font-size: 48px;
+}
+
+.btn-group a,
+button,
+.wa-btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 20px;
+  background: #ff7eb3;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+}
+
+.page-title {
+  margin-top: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 12px;
+}
