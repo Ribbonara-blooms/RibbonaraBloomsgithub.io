@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Customize Bouquet</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h2 class="page-title">Customize Your Bouquet</h2>
+
+<select id="flower">
+  <option>Rose</option>
+  <option>Lily</option>
+  <option>Tulip</option>
+  <option>Mixed</option>
+</select>
+
+<select id="color">
+  <option>Red</option>
+  <option>Pink</option>
+  <option>White</option>
+  <option>Pastel Mix</option>
+</select>
+
+<select id="size">
+  <option value="0">Small</option>
+  <option value="500">Medium (+Rs.500)</option>
+  <option value="1000">Large (+Rs.1000)</option>
+</select>
+
+<input type="text" id="message" placeholder="Ribbon message">
+
+<p>Total Price: <strong>Rs. <span id="price">2000</span></strong></p>
+
+<button onclick="sendWhatsApp()">Send Order to WhatsApp</button>
+
+<script>
+let basePrice = 2000;
+
+document.getElementById("size").addEventListener("change", function(){
+  document.getElementById("price").innerText = basePrice + Number(this.value);
+});
+
+function sendWhatsApp(){
+  let text =
+`Custom Bouquet Order:
+Flower: ${flower.value}
+Color: ${color.value}
+Message: ${message.value}
+Price: Rs.${price.innerText}`;
+
+  window.open(
+    "https://wa.me/97798XXXXXXXX?text=" + encodeURIComponent(text),
+    "_blank"
+  );
+}
+</script>
+
+</body>
+</html>
