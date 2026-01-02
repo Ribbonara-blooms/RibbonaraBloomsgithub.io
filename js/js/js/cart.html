@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cart | Ribbonara Blooms</title>
+</head>
+<body>
+
+<h2>Your Cart</h2>
+<div id="cartItems"></div>
+<h3>Total: Rs. <span id="total">0</span></h3>
+
+<button onclick="checkout()">Checkout via WhatsApp</button>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let total = 0;
+const cartItems = document.getElementById("cartItems");
+
+cart.forEach(item => {
+  cartItems.innerHTML += `<p>${item.name} - Rs.${item.price}</p>`;
+  total += item.price;
+});
+
+document.getElementById("total").innerText = total;
+
+function checkout(){
+  window.open(
+    "https://wa.me/9779749712093?text=My total flower order is Rs." + total,
+    "_blank"
+  );
+}
+</script>
+
+</body>
+</html>
